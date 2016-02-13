@@ -87,7 +87,7 @@
                 <form class="navbar-form navbar-right form-signin">
                     <button class="btn btn-primary" type="submit">Post</button>
                     <a class="btn btn-primary" href="/register" role="button">Account</a>
-
+                    <a class="btn btn-primary logout" href="#" role="button">Logout</a>
                 </form>
                 </div>
             </div><!--/.navbar-collapse -->
@@ -122,7 +122,8 @@
 </template>
 
 <template name="login">
-        <form class="form-signin">
+   <div class="text-center">
+        <form class="col-md-12 form-signin form-horizontal">
             <h2 class="form-signin-heading">Please sign in</h2>
             <label for="loginEmail" class="sr-only">Email address</label>
             <input name="loginEmail" type="email" id="loginEmail" class="form-control" placeholder="Email address" required="" autofocus="">
@@ -135,7 +136,7 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
-
+    </div>
 </template>
 
 <template name="home">
