@@ -7,8 +7,10 @@
 <div class="container">
     <div class="row">
       {{#if currentUser}}
+
           {{> navbarUser}}
           {{> dashboard}}
+          {{> jumbotron}}
       {{else}}
           {{> navbar}}
           {{> jumbotron}}
@@ -306,3 +308,4 @@
     <p>You're logged in.</p>
     <p><a href="#" class="logout">Logout</a></p>
 </template>
+
