@@ -7,6 +7,7 @@ if (Meteor.isClient) {
       Meteor.logout();
     }
   });
+
   Template.register.events({
     'submit form': function(event){
       event.preventDefault();
@@ -18,6 +19,7 @@ if (Meteor.isClient) {
       });
     }
   });
+
   Template.navbar.events({
     'submit form': function(event){
       event.preventDefault();
@@ -27,8 +29,6 @@ if (Meteor.isClient) {
     }
   });
 }
-
-
 
 Router.route('/', function () {
   this.render('Home');
