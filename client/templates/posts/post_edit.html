@@ -1,0 +1,80 @@
+
+<template name="postEdit">
+	<div class="container top-margin">
+        <h1 align="center">Edit Post</h1>
+        <div class="col-md-2"></div>
+		<div class="post col-md-8">
+		<form class="post-update">
+			<div class="row">
+				<div class="col-md-8">
+					<!-- <div class=" img-rounded"></div> -->
+					<img src="{{image}}" id="preview" class="img-rounded holder" alt="">
+					<p>Images cannot be updated</p>
+
+				<hr>
+				</div>
+				<div class="col-md-4 pull-right">
+					<div class="form-group">
+				      <label for="disabledSelect">Category</label>
+				      <select id="" name="category" class="form-control">
+				        <option value="for-sale" selected="{{selectData 'cars'}}">Cars</option>
+                          <option value="wanted" selected="{{selectData 'boats'}}">Boats</option>
+				        <option value="housing" selected="{selectData 'housing'}}">Housing</option>
+				        <option value="jobs" selected="{{selectData 'jobs'}}">Jobs</option>
+				        <option value="community" selected="{{selectData 'community'}}">Community</option>
+				        <option value="services" selected="{{selectData 'services'}}">Services</option>
+				      </select>
+				  	</div>
+
+
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" name="accept" value="true" checked>
+					    Accept the terms and conditions
+					  </label>
+					</div>
+					<div class="form-group">
+						<label for="number">Phone Number</label>
+						<input type="text" value="{{number}}" name="number" class="form-control" id="number" placeholder="Phone Number">
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="text" value="{{price}}" class="form-control" name="price" id="" placeholder="Price">
+				</div>
+				<div class="col-md-9">
+					<input type="text" value="{{title}}" class="form-control" name="title" id="title" placeholder="Title">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<textarea class="form-control" value="{{description}}" name="description" rows="8" placeholder="Description"></textarea>
+					<br>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="text" value="{{city}}" name="city" class="form-control" id="" placeholder="City">
+				</div>
+				<div class="col-md-9">
+					<input type="text" value="{{region}}" name="region" class="form-control" id="" placeholder="Region">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<button class="btn btn-default col-md-12">
+						<h1 class="text-center">Update Post</h1>
+					</button>
+				</div>
+			</div>
+		</form>
+		<br><br><br><br>
+		</div>
+
+	</div>
+</template>

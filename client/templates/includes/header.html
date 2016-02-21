@@ -1,0 +1,76 @@
+<template name="header">
+{{#if currentUser}}
+
+<nav style="padding-right: 20px" class="navbar navbar-default navbar-fixed-top mynavstyle" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed hidden-xs hidden-sm hidden-md" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="title" class="navbar-brand" href="{{pathFor 'categories'}}">Listable</a>
+      <form class="navbar-form navbar-left search col-xs-8" role="search">
+        <div class="form-group">
+          <input type="text" name="search" id="searchValue" class="form-control" placeholder="Search">
+        </div>
+      </form>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <div class="navbar navbar-nav navbar-right">
+      {{> userAccess}} &nbsp;
+
+      <button type="button" id="post" class="btn navbar-btn btn-default">Post</button>
+
+      <button type="button" class="btn navbar-btn btn-default" id="account">My Account</button>
+      </div>
+      
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+
+</nav>
+
+{{else}}
+
+    <nav style="padding-right: 20px" class="navbar navbar-default navbar-fixed-top mynavstyle" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed hidden-xs hidden-sm hidden-md" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="title" class="navbar-brand" href="{{pathFor 'categories'}}">Listable</a>
+                <form class="navbar-form navbar-left search col-xs-8" role="search">
+                    <div class="form-group">
+                        <input type="text" name="search" id="searchValue" class="form-control" placeholder="Search">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <div style="padding: 10px 0 10px 0" class="navbar navbar-nav navbar-right">
+                  {{> userAccess}} &nbsp;
+
+                </div>
+
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+
+    </nav>
+
+{{/if}}
+
+
+</template>

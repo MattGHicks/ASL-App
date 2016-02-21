@@ -1,0 +1,38 @@
+<template name="postPage">
+	
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="{{pathFor 'categories'}}">Home</a></li>
+			<li><a href="{{pathFor 'postsList'}}">{{category}}</a></li>
+			<li class="active">{{title}}</li>
+		</ol>
+
+		<div class="col-md-2"></div>
+		<div class="post col-md-8">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="post-holder" align="center">
+						<img src="{{image}}" class="img-responsive" id="pic" alt="Image">
+					</div>
+					<p class="text-center"><h2>{{price}} : {{title}}</h2></p>
+				</div>
+				<div class="col-md-4 pull-right">
+					<div class="checkbox has-error">
+					  <label>
+					    <input type="checkbox" id="flag">
+					    Flag this ad!
+					  </label>
+					</div>
+					<p>Name: {{author}}</p>
+					<p>Number: {{number}}</p>
+					<p>Location: {{city}}, {{region}} {{zipcode}}</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				{{description}}
+				
+			</div>
+		</div>
+	</div>
+</template>

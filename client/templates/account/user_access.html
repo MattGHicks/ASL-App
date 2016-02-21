@@ -1,0 +1,129 @@
+<template name="userAccess">
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default">
+	  	{{#if currentUser}}
+	  		{{currentUser.username}}
+	  	{{else}}
+	  		Log In
+	  	{{/if}}
+	  </button>
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+	    <span class="caret"></span>
+	    <span class="sr-only">Toggle Dropdown</span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu">
+	    
+	    	{{#if currentUser}}
+	    		<li><a href="" class="sign-out">Sign Out</a></li>
+			{{else}}
+				<li data-toggle="modal" class="signIn-modal" data-target="#signInModal"><a href="#">Sign In</a></li>
+				<li data-toggle="modal" class="register-modal" data-target="#registerModal"><a href="#">Register</a></li>
+			{{/if}}
+	    <li><a href="#">Close</a></li>
+	  </ul>
+	</div>
+
+
+<div class="modal fade" id="registerModal" tabindex="-2" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="">Register</h4>
+      </div>
+      <div class="modal-body">
+        {{> register}}
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="signInModal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        {{> signIn}}
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+
+<template name="signOut">
+	<h3>{{currentUser.username}} You are signed in. <button class="sign-out btn btn-danger">Sign Out</button></h3>
+	<img src="{{currentUser.profile.logo}}" alt="">
+</template>
+
+<template name="signIn">
+	<div class="container">
+		<div class="col-md-6">
+			<h3>Log In</h3>
+			<form class="form-horizontal sign-in-form">
+				<div class="form-group">
+			    	<label for="username" class="col-sm-2 control-label">Username:</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="username" placeholder="Username">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="password" class="col-sm-2 control-label">Password:</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" id="password" placeholder="Password">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-primary sign-in">Sign in</button>
+			      <button type="button" class="btn btn-success go-to-register">Register</button>
+			    </div>
+			  </div>
+			</form>
+			<!-- {{> recovery}} -->
+		</div>
+	</div>
+</template>
+
+<template name="register">
+	<div class="container">
+		<div class="col-md-6">
+			<form class="form-horizontal register-form">
+			  	<div class="form-group">
+			    	<label for="registerName" class="col-sm-2 control-label">Username:</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="registerName" placeholder="Username">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="registerPassword" class="col-sm-2 control-label">Choose Password:</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" id="registerPassword" placeholder="Password">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="registerConfirmPassword" class="col-sm-2 control-label">Confirm Password:</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm Password">
+			    	</div>
+			  	</div>
+			
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-primary register">Register</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+	</div>
+</template>
+
+

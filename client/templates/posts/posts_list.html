@@ -1,0 +1,14 @@
+<template name="postsList">
+
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="{{pathFor 'categories'}}">Home</a></li>
+			<li class="active"><a href="#">{{category}}</a></li>
+		</ol>
+		<div class="row">
+			{{#each posts}}
+				{{> postItem}}
+			{{/each}}
+		</div>
+	</div>
+</template>

@@ -1,0 +1,83 @@
+<template name="footerTabs">
+<div class="navbar navbar-default navbar-fixed-bottom">
+  	<!-- <div class="container-fluid"> -->
+  		<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  			<div class="btn-group" role="group">
+  				<button type="button" class="btn btn-default" id="homepage">
+  					<span class="glyphicon glyphicon-home" aria-hidden="true">
+  						<p>Home</p>
+  					</span>
+  				</button>
+	  		</div>
+  			<div class="btn-group" role="group">
+	  			{{#if currentUser}}
+	  			<!-- data-toggle="modal" class="signIn-modal" data-target="#signInModal" -->
+	  				<button type="button" class="btn btn-default" id="newPosting">
+	  					<span class="glyphicon glyphicon-plus center-align" aria-hidden="true">
+	  						<p>New</p>
+	  					</span>
+	  				</button>
+	  			{{else}}
+	  				<button data-toggle="modal" data-target="#signInPost" type="button" class="btn btn-default signIn">
+	  					<span class="glyphicon glyphicon-plus center-align" aria-hidden="true">
+	  						<p>New</p>
+	  					</span>
+	  				</button>
+	  			{{/if}}
+	  		</div>
+	  		<div class="btn-group" role="group">
+	  			{{#if currentUser}}
+	  				<button type="button" class="btn btn-default" id="myAccount">
+	  					<span class="glyphicon glyphicon-user center-align" aria-hidden="true">
+	  						<p>Account</p>
+	  					</span>
+	  				</button>
+	  			{{else}}
+	  				<button data-toggle="modal" data-target="#signInPost" type="button" class="btn btn-default signIn">
+	  					<span class="glyphicon glyphicon-user center-align" aria-hidden="true">
+	  						<p>Account</p>
+	  					</span>
+	  				</button>
+	  			{{/if}}
+	  		</div>
+		</div>
+	<!-- </div> -->
+</div>
+
+<div class="modal fade" id="signInPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        {{> signIn}}
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="registerPost" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="">Register</h4>
+      </div>
+      <div class="modal-body">
+        {{> register}}
+      </div>
+      <div class="modal-footer">
+<li data-toggle="modal" class="register-modal" data-target="#registerPost"></li>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</template>

@@ -1,0 +1,89 @@
+<!-- {{> upload_bootstrap }} -->
+<!-- {{> dropzone }} -->
+
+<!-- ================================= -->
+
+
+<template name="postSubmit">
+	<div class="container top-margin">
+        <h1 align="center">Submit Post</h1>
+
+        <div class="col-md-2"></div>
+		<div class="post col-md-8">
+		<form class="post-submit">
+			<div class="row">
+				<div class="col-md-8">
+					<!-- <div class=" img-rounded"></div> -->
+					<img src="resources/blue-camera-icon.png" id="preview" class="img-responsive img-rounded holder" alt="">
+					<div style="display:none;">
+						<input type="file" id="fileInput">
+					</div>
+					<p align="center">Click above to upload image.</p>
+					<!-- {{> upload_bootstrap fileTypes='.png,.jpg' }} -->
+				<hr>
+				</div>
+				<div class="col-md-4 pull-right">
+					<div class="form-group">
+				      <label for="disabledSelect">Category</label>
+				      <select id="" name="category" class="form-control">
+				        <option value="cars">Cars</option>
+					    <option value="boats">Boats</option>
+				        <option value="housing">Housing</option>
+				        <option value="jobs">Jobs</option>
+				        <option value="community">Community</option>
+				        <option value="services">Services</option>
+				      </select>
+				  	</div>
+
+					
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="true" name="accept" checked>
+					    Accept the terms and conditions
+					  </label>
+					</div>
+					<div class="form-group">
+						<label for="number">Phone Number</label>
+						<input type="text" name="number" class="form-control" id="number" placeholder="Phone Number">
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="price" id="" placeholder="Price">
+				</div>
+				<div class="col-md-9">
+					<input type="text" class="form-control" name="title" id="" placeholder="Title" maxlength="20">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<textarea class="form-control" name="description" rows="8" placeholder="Description"></textarea>
+					<br>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<input type="text" name="city" class="form-control" id="" placeholder="City">
+				</div>
+				<div class="col-md-3">
+					<input type="text" name="region" class="form-control" id="" placeholder="State">
+				</div>
+                <div class="col-md-3">
+                    <button class="hvr-back-pulse btn btn-default btn-lg">
+                        Post
+                    </button>
+                </div>
+			</div>
+		</form>
+		<br><br><br><br>
+		</div>
+		
+	</div>
+</template>
+
+
+

@@ -1,0 +1,59 @@
+<template name="account">
+<div></div>
+  	<h1 class="transparent-header top-margin" align="center">My Posts</h1>
+  	
+	{{> postings}}
+
+</template>
+
+
+
+<template name="postings">
+	<div class="container">
+
+		{{#each postings}}
+			{{> posting}}
+		{{/each}}
+	</div>
+</template>
+
+
+<template name="posting">
+	<div class="panel panel-default">
+	  	<div class="panel-body">
+		  	<div class="col-xs-12">
+			  	<div class="col-md-2">
+				    <a href="#">
+				      	<img class="media-object post-image" src="{{image}}" alt="">
+				    </a>
+			  	</div>
+			  	<div class="">
+			    	<h4 style="color: #000;" class="media-heading">{{title}} : {{price}}
+				    	<div class="pull-right">
+				    		<a href="{{pathFor 'postEdit'}}">
+				    			<button type="button" id="edit" class="btn btn-info">
+				    				<span class="glyphicon glyphicon-wrench"></span>
+				    			</button>
+				    		</a>
+			    			&nbsp;
+			    			<button type="button" id="delete" class="btn btn-danger"><span style="color: #fff;" class="glyphicon glyphicon-trash"></span></button>
+			    		</div>
+			    	</h4>
+			  	</div>
+			</div>
+	  	<!-- <h4>{{title}} : {{price}}
+		    <div class="pull-right">
+		    	<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-wrench"></span></button>
+		    	&nbsp;
+		    	<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+		    </div>
+		</h4> -->
+	  	</div>
+	</div>
+</template>
+
+
+
+
+
+

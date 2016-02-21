@@ -1,0 +1,19 @@
+<template name="searchResults">
+	
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="{{pathFor 'categories'}}">Home</a></li>
+			<!-- <li><a href="{{pathFor 'postList'}}">Search: {{search}}</a></li> -->
+			<li class="active">Search: {{search}}</li>
+		</ol>
+		<div class="row">
+			{{#if resultsCount}}
+				{{#each results}}
+					{{> postItem}}
+				{{/each}}
+			{{else}}
+				{{> noResults}}
+			{{/if}}
+		</div>
+	</div>
+</template>

@@ -1,0 +1,15 @@
+<template name="layout">
+<div class="app-page">
+
+	{{> header}}
+	{{> errors}}
+	<div id="main" class="main">
+		{{> yield}}
+		{{> footer}}
+	</div>
+	<div class="visible-xs visible-sm">
+		{{> footerTabs}}
+	</div>
+	
+</div>
+</template>

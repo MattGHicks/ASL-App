@@ -1,0 +1,19 @@
+<template name="categories">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Listable</h1>
+            <p>Where everything is Listable...</p>
+        </div>
+    </div>
+	<div class="container">
+		<ol id="breadcrumb" class="breadcrumb">
+			<li><a href="{{pathFor 'categories'}}">Home</a></li>
+		</ol>
+		<div class="row">
+			{{#each categories}}
+				{{> category}}
+			{{/each}}
+		</div>
+	</div>	
+	
+</template>

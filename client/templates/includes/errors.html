@@ -1,0 +1,12 @@
+<template name="errors">
+	{{#each errors}}
+		{{> error}}
+	{{/each}}
+</template>
+
+<template name="error">
+	<div class="alert-danger alert" role="alert">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{message}}
+	</div>
+</template>
