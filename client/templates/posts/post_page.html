@@ -1,5 +1,5 @@
 <template name="postPage">
-	
+
 	<div class="container">
 		<ol class="breadcrumb">
 			<li><a href="{{pathFor 'categories'}}">Home</a></li>
@@ -28,11 +28,32 @@
 					<p>Location: {{city}}, {{region}} {{zipcode}}</p>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				{{description}}
-				
 			</div>
+			<hr>
+            <div class="row">
+				{{#if currentUser}}
+                    <h2>Comments</h2>
+					{{> AddComment}}
+				{{else}}
+                    <h3 class="text-center" style="color: red">You need to login in order to comment.</h3>
+                    <h2>Comments</h2>
+				{{/if}}
+            </div>
+
+            <div class="col-xs-12">
+				<ul class ="list-group">
+					{{#each comments}}
+						{{>SingleComment}}
+					{{/each}}
+				</ul>
+            </div>
+
+
 		</div>
 	</div>
 </template>
+
+

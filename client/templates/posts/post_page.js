@@ -8,6 +8,9 @@ Template.postPage.helpers({
 	},
 	category: function () {
 		return Session.get('category');
+	},
+	comments: function () {
+		return Comments.find({PostId: this._id});
 	}
 });
 
@@ -18,3 +21,4 @@ Template.postPage.events({
 		flagged.setAttribute("disabled", "true");
 	}
 });
+

@@ -9,3 +9,7 @@ Meteor.publish('items', function () {
 Meteor.publish('uploads', function () {
 	return Uploads.find();
 });
+
+Meteor.publish('comments', function () {
+	return Comments.find();
+});
